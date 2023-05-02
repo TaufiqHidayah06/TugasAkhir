@@ -8,7 +8,7 @@
     <title>Perpustakaan</title>
 </head>
 <!-- favicon -->
-<link rel="shortcut icon" type="image/png" href="{{asset('img/logokel1.png')}}">
+<link rel="shortcut icon" type="image/png" href="{{asset('img/LOGO1.png')}}">
 <!-- google font -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
 <!-- responsive -->
 <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+<link rel="stylesheet" href="{{asset('css/login.css')}}">
 
 <body>
     <!--PreLoader-->
@@ -46,8 +47,8 @@
                     <div class="main-menu-wrap">
                         <!-- logo -->
                         <div class="site-logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.png" alt="">
+                            <a href="#">
+                                <img src="{{asset('img/Logo2.png')}}" alt="">
                             </a>
                         </div>
                         <!-- logo -->
@@ -106,8 +107,7 @@
                             <p class="subtitle">Sistem Informasi </p>
                             <h1>PERPUSTAKAAN UNILAK</h1>
                             <div class="hero-btns">
-                                <a href="#" class="boxed-btn">Login</a>
-                                <a href="#" class="bordered-btn">Registrasi</a>
+                                <a href="#" class="boxed-btn" data-toggle="modal" data-target="#exampleModal">Login</a>
                             </div>
                         </div>
                     </div>
@@ -206,5 +206,6 @@
 <script src="{{asset('js/sticker.js')}}"></script>
 <!-- main js -->
 <script src="{{asset('js/main.js')}}"></script>
+@include('login.login')
 
 </html>
