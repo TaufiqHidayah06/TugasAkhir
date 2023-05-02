@@ -8,7 +8,7 @@
     <title>Perpustakaan</title>
 </head>
 <!-- favicon -->
-<link rel="shortcut icon" type="image/png" href="{{asset('img/LOGO1.png')}}">
+<link rel="shortcut icon" type="image/png" href="{{asset('img/icon.png')}}">
 <!-- google font -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -58,7 +58,7 @@
                             <ul>
                                 <li class="current-list-item"><a href="#">Home</a>
                                 </li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="#">About</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li>
                                     <div class="header-icons">
