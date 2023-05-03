@@ -21,6 +21,7 @@ class AdminController extends Controller
 
         // mengambil semua data 
         $peminjaman = Peminjaman::all();
+        ///
 
 
         // bikin viewnya untuk menampilkan semua data user
