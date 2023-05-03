@@ -36,7 +36,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{asset('img/logo3.png')}}" alt="AdminLTELogo">
+            <img class="animation__shake" src="{{asset('img/screen.png')}}" alt="AdminLTELogo">
         </div>
 
         <!-- Navbar -->
@@ -68,7 +68,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->

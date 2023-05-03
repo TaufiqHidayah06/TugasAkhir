@@ -18,4 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/dashboard-admin', [AdminController::class, 'dashboard']);
+Route::get('/admin-kategori', [AdminController::class, 'kategori']);
+Route::get('/admin-buku', [AdminController::class, 'buku']);
+Route::get('/admin-register', [AdminController::class, 'register']);
+Route::get('/admin-laporan-peminjaman', [AdminController::class, 'laporan_peminjaman']);
+Route::get('/admin-laporan-pengembalian', [AdminController::class, 'laporan_pengembalian']);
 Route::get('/dashboard-user', [UserController::class, 'dashboard']);
