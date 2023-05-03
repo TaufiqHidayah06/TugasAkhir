@@ -13,26 +13,13 @@
                     <form>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    placeholder="Enter email">
+                                <label for="exampleInputEmail1">Kode Kategori</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" readonly required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1"
-                                    placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                </div>
+                                <label for="exampleInputPassword1">Kategori</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Masukkan Kategori" required>
                             </div>
                         </div>
                         <!-- /.card-body -->
