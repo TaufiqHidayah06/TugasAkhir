@@ -100,7 +100,7 @@
                                     </table>
                                     <div class="card-footer" style="text-align: right;" data-toggle="modal"
                                         data-target="#exampleModal">
-                                        <a class="btn btn-primary" href="#" aria-hidden="true">
+                                        <a class="btn btn-primary" href="admin-kategori-add" aria-hidden="true">
                                             <i class="fas fa-folder">
                                             </i>
                                             Add

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('peminjamans', function (Blueprint $table) {
+        Schema::create('peminjaman', function (Blueprint $table) {
             $table->char('kode_peminjaman',50)->primary();
             $table->char('user_kode',50)->unique();
             $table->char('buku_kode',50)->unique();
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('status', ['Belum Kembali', 'Sudah Kembali']);
             $table->timestamps();
         });
-        Schema::table('peminjamans', function (Blueprint $table) {
+        Schema::table('peminjaman', function (Blueprint $table) {
             $table->foreign('user_kode')->references('kode_user')->on('user')->onDelete('cascade');
             $table->foreign('buku_kode')->references('kode_buku')->on('buku')->onDelete('cascade');
         });
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peminjamans');
+        Schema::dropIfExists('peminjaman');
     }
 };

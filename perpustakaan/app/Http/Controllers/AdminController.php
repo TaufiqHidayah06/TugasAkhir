@@ -22,8 +22,14 @@ class AdminController extends Controller
         return view('admin/master/buku',['buku' => $buku]);
     }
     public function kategori() {
-        $ktg = kategori::all();
-        $kategori = DB::table('kategori')->select(DB::raw('MAX(RIGHT(kode_kategori,4) as kode)'));
+        
+        $kategori2 = DB::table('kategoris')->get();
+        return view('admin/master/kategori',['kategori' => $kategori2]);
+        
+    }
+    public function formkategori() {
+        $kategori3 = Kategori::all();
+        $kategori = DB::table('kategoris')->select(DB::raw('MAX(RIGHT(kode_kategori,4) as kode)'));
         $kd = "";
         if($kategori->count()>0){
             foreach($kategori->get() as $k){
@@ -33,13 +39,7 @@ class AdminController extends Controller
         }else{
             $kd="0001";
         }
-        $kategori2 = DB::table('kategori')->get();
-        return view('admin/master/kategori',['kategori' => $kategori2]);
-        return view('admin/master/form/kategori',compact('ktg'));
-    }
-    public function formkategori() {
-        
-        
+        return view('admin/master/form/kategori',compact('kategori','kd'));
     }
     public function register() {
         return view('admin/master/registrasi');
