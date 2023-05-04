@@ -14,8 +14,8 @@ class Peminjaman extends Model
         return $this->belongsToMany('App\Buku');
     }
 
-    public function user()
+    public function login()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\Login');
     }
 }
