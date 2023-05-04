@@ -13,4 +13,13 @@ class Buku extends Model
     {
         return $this->belongsTo(Kategori::class);
     }
+    protected $fillable = [
+        'position_name',
+    ];
+
+    public function buku()
+    {
+
+        return $this->hasMany(buku::class);
+    }
 }

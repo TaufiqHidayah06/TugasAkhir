@@ -105,7 +105,7 @@
                                         @endforeach
                                     </table>
                                     <div class="card-footer" style="text-align: right;">
-                                        <a class="btn btn-primary" href="#" aria-hidden="true">
+                                        <a class="btn btn-primary" href="/admin-buku-add" aria-hidden="true">
                                             <i class="fas fa-folder">
                                             </i>
                                             Add

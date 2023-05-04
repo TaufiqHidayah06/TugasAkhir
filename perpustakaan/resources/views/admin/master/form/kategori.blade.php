@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Master-Kategori</title>
+    <title>Add Kategori</title>
 
     <link rel="shortcut icon" type="image/png" href="{{asset('img/icon.png')}}">
     <!-- Google Font: Source Sans Pro -->
@@ -69,8 +69,8 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Kode Kategori</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" value=""
-                                                readonly required>
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                value="{{'KTG'.$kd}}" readonly required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Kategori</label>
@@ -81,6 +81,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Back</button>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>
