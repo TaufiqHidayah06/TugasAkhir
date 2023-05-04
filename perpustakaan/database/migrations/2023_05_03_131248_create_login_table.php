@@ -12,7 +12,6 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    //
     {
         Schema::create('login', function (Blueprint $table) {
             $table->char('kode_user',50)->primary();

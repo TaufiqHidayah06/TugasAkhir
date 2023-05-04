@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Profil extends Model
+class Login extends Model
 {
     use HasFactory;
-
-    public function login()
+    
+    public function profil()
     {
-        return $this->belongsTo(Login::class);
+    	return $this->hasOne(Profil::class);
     }
 }
