@@ -23,23 +23,13 @@ class AdminController extends Controller
     }
     public function kategori() {
         
-        $kategori2 = DB::table('kategoris')->get();
-        return view('admin/master/kategori',['kategori' => $kategori2]);
+        $kategori2 = DB::table('kategori')->get();
+        return view('admin/master/kategori')->with('kategori', $kategori2);
         
     }
-    public function formkategori() {
-        $kategori3 = Kategori::all();
-        $kategori = DB::table('kategoris')->select(DB::raw('MAX(RIGHT(kode_kategori,4) as kode)'));
-        $kd = "";
-        if($kategori->count()>0){
-            foreach($kategori->get() as $k){
-                $tmp = ((int)$k->kode)+1;
-                $kd =sprintf("%04s",$tmp);
-            }
-        }else{
-            $kd="0001";
-        }
-        return view('admin/master/form/kategori',compact('kategori','kd'));
+    public function kategori_add() {
+       
+        return view('admin/master/form/kategori');
     }
     public function register() {
         return view('admin/master/registrasi');

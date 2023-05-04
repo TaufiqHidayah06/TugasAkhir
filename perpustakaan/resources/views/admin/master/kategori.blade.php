@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="{{asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/login.css')}}">
 
 </head>
 
@@ -98,9 +97,8 @@
                                         </tbody>
                                         @endforeach
                                     </table>
-                                    <div class="card-footer" style="text-align: right;" data-toggle="modal"
-                                        data-target="#exampleModal">
-                                        <a class="btn btn-primary" href="admin-kategori-add" aria-hidden="true">
+                                    <div class="card-footer" style="text-align: right;">
+                                        <a class="btn btn-primary" href="/admin-kategori-add" aria-hidden="true">
                                             <i class="fas fa-folder">
                                             </i>
                                             Add
@@ -127,6 +125,5 @@
     <!-- ./wrapper -->
 </body>
 @include('admin.partial.js_master')
-@include('admin.master.form.kategori')
 
 </html>
