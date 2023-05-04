@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('profil', function (Blueprint $table) {
-            $table->increments('id_profil');
-            $table->char('nama_lengkap');
-            $table->integer('no_hp');
+            $table->char('kode_profil',50)->primary();
+            $table->char('nama',50);
+            $table->char('alamat',50);
+            $table->char('no_hp',15);
             $table->timestamps();
         });
     }

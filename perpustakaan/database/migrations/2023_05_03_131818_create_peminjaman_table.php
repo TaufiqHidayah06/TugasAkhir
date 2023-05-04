@@ -14,17 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('peminjaman', function (Blueprint $table) {
-            $table->increments('id_pinjam');
-            $table->unsignedInteger('user_id')->unique();
-            $table->unsignedInteger('buku_id')->unique();
-            $table->char('tgl_pinjam');
-            $table->char('tgl_kembali');
+            $table->char('kode_peminjaman',50)->primary();
+            $table->char('user_kode',50)->unique();
+            $table->char('buku_kode',50)->unique();
+            $table->char('tgl_pinjam',50);
+            $table->char('tgl_kembali',50);
             $table->enum('status', ['Belum Kembali', 'Sudah Kembali']);
             $table->timestamps();
         });
         Schema::table('peminjaman', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id_user')->on('user')->onDelete('cascade');
-            $table->foreign('buku_id')->references('id_buku')->on('buku')->onDelete('cascade');
+            $table->foreign('user_kode')->references('kode_user')->on('user')->onDelete('cascade');
+            $table->foreign('buku_kode')->references('kode_buku')->on('buku')->onDelete('cascade');
         });
     }
 

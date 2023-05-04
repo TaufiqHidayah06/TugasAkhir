@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('buku', function (Blueprint $table) {
-            $table->increments('id_buku');
-            $table->char('nama_buku');
-            $table->char('penulis');
-            $table->char('penerbit');
-            $table->unsignedInteger('kategori_id')->unique();
+            $table->char('kode_buku',50)->primary();
+            $table->char('nama_buku',50);
+            $table->char('penulis',50);
+            $table->char('penerbit',50);
+            $table->char('kategori_kode',50)->unique();
             $table->timestamps();
         });
         Schema::table('buku', function (Blueprint $table) {
-            $table->foreign('kategori_id')->references('id_kategori')->on('kategori')->onDelete('cascade');
+            $table->foreign('kategori_kode')->references('kode_kategori')->on('kategori')->onDelete('cascade');
         });
     }
 

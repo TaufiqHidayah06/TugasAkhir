@@ -14,17 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->increments('id_user');
-            $table->char('nama_user');
-            $table->char('prodi');
-            $table->char('alamat');
-            $table->char('email');
+            $table->char('kode_user',50)->primary();
+            $table->char('email',50);
             $table->char('password');
-            $table->unsignedInteger('profil_id')->unique();
+            $table->char('batas_pinjam',50);
+            $table->char('profil_kode',50)->unique();
             $table->timestamps();
         });
         Schema::table('user', function (Blueprint $table) {
-            $table->foreign('profil_id')->references('id_profil')->on('profil')->onDelete('cascade');
+            $table->foreign('profil_kode')->references('kode_profil')->on('profil')->onDelete('cascade');
         });
     }
 
