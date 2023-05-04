@@ -14,16 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('petugas', function (Blueprint $table) {
-            $table->increments('id_petugas');
-            $table->char('nama_petugas');
-            $table->char('email');
-            $table->char('password');
-            $table->char('alamat');
-            $table->unsignedInteger('profil_id')->unique();
+            $table->char('kode_petugas',50)->primary();
+            $table->char('email',50);
+            $table->char('password',50);
+            $table->char('alamat', 50);
+            $table->char('profil_kode',50)->unique();
             $table->timestamps();
         });
         Schema::table('petugas', function (Blueprint $table) {
-            $table->foreign('profil_id')->references('id_profil')->on('profil')->onDelete('cascade');
+            $table->foreign('profil_kode')->references('kode_profil')->on('profil')->onDelete('cascade');
         });
     }
 
