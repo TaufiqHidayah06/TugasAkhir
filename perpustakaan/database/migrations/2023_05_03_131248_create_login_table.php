@@ -12,8 +12,9 @@ return new class extends Migration
      * @return void
      */
     public function up()
+    //
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('login', function (Blueprint $table) {
             $table->char('kode_user',50)->primary();
             $table->char('email',50);
             $table->char('password');
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->char('profil_kode',50)->unique();
             $table->timestamps();
         });
-        Schema::table('user', function (Blueprint $table) {
+        Schema::table('login', function (Blueprint $table) {
             $table->foreign('profil_kode')->references('kode_profil')->on('profil')->onDelete('cascade');
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('login');
     }
 };

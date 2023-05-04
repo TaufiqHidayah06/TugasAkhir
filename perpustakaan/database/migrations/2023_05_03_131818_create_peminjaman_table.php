@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::table('peminjaman', function (Blueprint $table) {
-            $table->foreign('user_kode')->references('kode_user')->on('user')->onDelete('cascade');
+            $table->foreign('user_kode')->references('kode_user')->on('login')->onDelete('cascade');
             $table->foreign('buku_kode')->references('kode_buku')->on('buku')->onDelete('cascade');
         });
     }

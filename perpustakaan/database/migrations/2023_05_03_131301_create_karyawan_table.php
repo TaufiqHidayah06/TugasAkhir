@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('petugas', function (Blueprint $table) {
+        Schema::create('karyawan', function (Blueprint $table) {
             $table->char('kode_petugas',50)->primary();
             $table->char('email',50);
             $table->char('password',50);
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->char('profil_kode',50)->unique();
             $table->timestamps();
         });
-        Schema::table('petugas', function (Blueprint $table) {
+        Schema::table('karyawan', function (Blueprint $table) {
             $table->foreign('profil_kode')->references('kode_profil')->on('profil')->onDelete('cascade');
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('petugas');
+        Schema::dropIfExists('karyawan');
     }
 };
