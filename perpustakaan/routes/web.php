@@ -23,4 +23,8 @@ Route::get('/admin-buku', [AdminController::class, 'buku']);
 Route::get('/admin-register', [AdminController::class, 'register']);
 Route::get('/admin-laporan-peminjaman', [AdminController::class, 'laporan_peminjaman']);
 Route::get('/admin-laporan-pengembalian', [AdminController::class, 'laporan_pengembalian']);
+Route::get('/admin-peminjaman', [AdminController::class, 'peminjaman']);
+Route::get('/admin-pengembalian', [AdminController::class, 'pengembalian']);
 Route::get('/dashboard-user', [UserController::class, 'dashboard']);
+Route::get('/user-peminjaman', [UserController::class, 'peminjaman']);
+Route::get('/user-pengembalian', [UserController::class, 'pengembalian']);

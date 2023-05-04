@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Master-Registrasi</title>
+    <title>Transaksi Pengembalian</title>
+
     <link rel="shortcut icon" type="image/png" href="{{asset('img/icon.png')}}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -30,11 +31,11 @@
         </div>
 
         <!-- Navbar -->
-        @include('admin.partial.topnavbar')
+        @include('user.partial.topnavbar')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        @include('admin.partial.sidenavbar')
+        @include('user.partial.sidenavbar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -43,12 +44,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Data Pengguna</h1>
+                            <h1 class="m-0">Pengembalian</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="/dashboard-admin">Home</a></li>
-                                <li class="breadcrumb-item active">Master</li>
+                                <li class="breadcrumb-item active">Transaksi</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -61,18 +62,19 @@
                             <!-- /.content-header -->
                             <div class="card">
                                 <div class="card-header" style="background-color: steelblue; color: white;">
-                                    <h3 class="card-title">Data Pengguna</h3>
+                                    <h3 class="card-title">pengembalian</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                            <tr style="background-color: steelblue; color: white;">
+                                            <tr style="background-color: steelblue; color: white; text-align: center;">
                                                 <th>Rendering engine</th>
                                                 <th>Browser</th>
                                                 <th>Platform(s)</th>
                                                 <th>Engine version</th>
                                                 <th>CSS grade</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -84,6 +86,13 @@
                                                 <td>Win 95+</td>
                                                 <td> 4</td>
                                                 <td>X</td>
+                                                <td class="project-actions text-center">
+                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                        <i class="fas fa-hand-point-right">
+                                                        </i>
+                                                        Kembali
+                                                    </a>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Trident</td>
@@ -93,6 +102,29 @@
                                                 <td>Win 95+</td>
                                                 <td>5</td>
                                                 <td>C</td>
+                                                <td class="project-actions text-center">
+                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                        <i class="fas fa-hand-point-right">
+                                                        </i>
+                                                        Kembali
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Trident</td>
+                                                <td>Internet
+                                                    Explorer 5.0
+                                                </td>
+                                                <td>Win 95+</td>
+                                                <td>5</td>
+                                                <td>C</td>
+                                                <td class="project-actions text-center">
+                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                        <i class="fas fa-hand-point-right">
+                                                        </i>
+                                                        Kembali
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
@@ -105,14 +137,6 @@
                                             </tr>
                                         </tfoot>
                                     </table>
-                                    <div class="card-footer" style="text-align: right;" data-toggle="modal"
-                                        data-target="#exampleModal">
-                                        <a class="btn btn-primary" href="#" aria-hidden="true">
-                                            <i class="fas fa-folder">
-                                            </i>
-                                            Add
-                                        </a>
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -134,6 +158,6 @@
     <!-- ./wrapper -->
 </body>
 @include('admin.partial.js_master')
-@include('admin.master.form.registrasi')
+@include('admin.master.form.buku')
 
 </html>

@@ -24,4 +24,10 @@ class AdminController extends Controller
     public function register() {
         return view('admin/master/registrasi');
     }
+    public function peminjaman() {
+        return view('admin/transaksi/peminjaman');
+    }
+    public function pengembalian() {
+        return view('admin/transaksi/pengembalian');
+    }
 }
