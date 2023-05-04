@@ -104,8 +104,7 @@
                                         </tbody>
                                         @endforeach
                                     </table>
-                                    <div class="card-footer" style="text-align: right;" data-toggle="modal"
-                                        data-target="#exampleModal">
+                                    <div class="card-footer" style="text-align: right;">
                                         <a class="btn btn-primary" href="#" aria-hidden="true">
                                             <i class="fas fa-folder">
                                             </i>
@@ -133,6 +132,5 @@
     <!-- ./wrapper -->
 </body>
 @include('admin.partial.js_master')
-@include('admin.master.form.buku')
 
 </html>
