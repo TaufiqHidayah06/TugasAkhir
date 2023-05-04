@@ -14,7 +14,8 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Kode Kategori</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" readonly required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" value="{{ 'KK-'.$kd }}"
+                                    readonly required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kategori</label>

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('profil', function (Blueprint $table) {
+        Schema::create('profils', function (Blueprint $table) {
             $table->char('kode_profil',50)->primary();
             $table->char('nama',50);
             $table->char('alamat',50);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profil');
+        Schema::dropIfExists('profils');
     }
 };
