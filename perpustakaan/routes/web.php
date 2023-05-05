@@ -19,11 +19,12 @@ Route::get('/', function () {
     return view('home');});
 
 // Login
-
 Route::get('/login-perpus', [LoginController::class, 'login_perpus'])->name('login');
 Route::post('/login-perpus', [LoginController::class, 'actionlogin']);
+
 // Admin
 Route::get('/dashboard-admin', [AdminController::class, 'dashboard'])->middleware('auth');
+
 // Kategori
 Route::get('/admin-kategori', [AdminController::class, 'kategori'])->middleware('auth');
 Route::get('/admin-kategori-add', [AdminController::class, 'kategori_add'])->middleware('auth');
