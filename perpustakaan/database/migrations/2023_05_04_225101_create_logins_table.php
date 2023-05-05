@@ -15,11 +15,9 @@ return new class extends Migration
     {
         Schema::create('logins', function (Blueprint $table) {
             $table->char('kode_login',50)->primary();
-            $table->char('nama',50);
+            $table->char('email',50);
             $table->char('password',50);
-            $table->char('alamat',50);
-            $table->char('status',50);
-            $table->char('no_hp',15);
+            
             $table->timestamps();
         });
     }
