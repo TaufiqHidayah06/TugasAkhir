@@ -13,12 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
+        
         Schema::create('logins', function (Blueprint $table) {
             $table->char('kode_login',50)->primary();
             $table->char('email',50);
             $table->char('password',50);
             $table->char('nip',50)->unique();
             $table->timestamps();
+        });
+        Schema::table('logins', function (Blueprint $table) {
+            $table->foreign('kode_login')->references('nip')->on('karyawans')->onDelete('cascade');
         });
     }
 

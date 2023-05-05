@@ -22,9 +22,7 @@ return new class extends Migration
             $table->char('batas_pinjam',15);
             $table->timestamps();
         });
-        Schema::table('karyawans', function (Blueprint $table) {
-            $table->foreign('login_kode')->references('kode_login')->on('logins')->onDelete('cascade');
-        });
+        
     }
 
     /**

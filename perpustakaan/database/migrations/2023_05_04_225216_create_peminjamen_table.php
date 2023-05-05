@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('peminjamans', function (Blueprint $table) {
             $table->char('kode_peminjaman',50)->primary();
-            $table->char('nim',50)->unique();
+            $table->char('nip',50)->unique();
             $table->char('buku_kode',50)->unique();
             $table->char('tgl_pinjam',50);
             $table->char('tgl_kembali',50);
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::table('peminjamans', function (Blueprint $table) {
-            $table->foreign('nim')->references('nim')->on('profils')->onDelete('cascade');
+            $table->foreign('nip')->references('nip')->on('karyawans')->onDelete('cascade');
             $table->foreign('buku_kode')->references('kode_buku')->on('bukus')->onDelete('cascade');
         });
     }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login 10</title>
+    <title>Login Perpustakaan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -45,6 +45,9 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary submit px-3">Login</button>
+                            </div>
+                            <div class="form-group">
+                                <a href="/" class="form-control btn btn-primary submit px-3">Back</a>
                             </div>
                         </form>
                     </div>
