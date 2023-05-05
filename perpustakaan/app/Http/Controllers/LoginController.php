@@ -10,9 +10,16 @@ class LoginController extends Controller
 {
     public function login_perpus()
     {
-        return view('login/login');
+        if (Auth::check()) 
+        {
+            return redirect('/');
+        }
+        else
+        {
+            return view('login/login');
+        }
+        
     }
-
     public function actionlogin(Request $request)
     {
         $data = $request->validate([

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->char('batas_pinjam',15);
             $table->timestamps();
         });
-        
     }
 
     /**
