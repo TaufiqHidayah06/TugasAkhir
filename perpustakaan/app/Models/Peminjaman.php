@@ -8,14 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Peminjaman extends Model
 {
     use HasFactory;
-
     public function buku()
     {
-        return $this->belongsToMany('App\Buku');
+        return $this->belongsToMany(Buku::class);
     }
 
     public function login()
     {
-        return $this->belongsToMany('App\Login');
+        return $this->belongsToMany(Login::class);
     }
 }

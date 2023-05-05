@@ -81,12 +81,16 @@
                                                 <td>{{ $item->kode_kategori }}</td>
                                                 <td>{{ $item->nama_kategori }}</td>
                                                 <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/admin-kategori-edit/{{ $item->kode_kategori }}"
+                                                        aria-hidden="true">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="" aria-hidden="true">
+                                                    <a class="btn btn-danger btn-sm"
+                                                        href="/admin-kategori-delete/{{ $item->kode_kategori }}"
+                                                        aria-hidden="true">
                                                         <i class="fas fa-trash">
                                                         </i>
                                                         Delete

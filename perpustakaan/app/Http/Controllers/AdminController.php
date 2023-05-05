@@ -19,11 +19,11 @@ class AdminController extends Controller
         return view('admin/laporan/pengembalian');
     }
     public function buku() {
-        $buku = DB::table('bukus')->join('kategori', 'kategori.kode_kategori', '=', 'buku.kategori_kode')->get();
+        $buku = DB::table('bukus')->join('kategoris', 'kategoris.kode_kategori', '=', 'bukus.kategori_kode')->get();
         return view('admin/master/buku',['buku' => $buku]);
     }
     public function buku_add() {
-        $positions = Buku::all();
+        $select = Kategori::all();
         $buku = DB::table('bukus')->select(DB::raw('MAX(RIGHT(kode_buku,4)) as kode'));
         $kd = "";
         if($buku->count()>0){
@@ -34,7 +34,7 @@ class AdminController extends Controller
         }else{
             $kd = "0001";
         }
-        return view('admin/master/form/buku', compact('positions','buku','kd'));
+        return view('admin/master/form/buku', compact('select','buku','kd'));
     }
     public function kategori() {
         
@@ -55,6 +55,36 @@ class AdminController extends Controller
             $kd = "0001";
         }
         return view('admin/master/form/kategori', compact('kategori','kd'));
+    }
+    public function kategori_save(Request $request){
+        $this->validate($request, [
+            'kode_kategori' => 'required',
+            'nama_kategori' => 'required'
+        ]);
+
+        kategori::create($request->all());
+       
+        return redirect('/admin-kategori')->with('success','Kategori created successfully.');
+    }
+    public function kategori_edit($id){
+
+	    $kategori = DB::table('kategoris')->where('kode_kategori',$id)->get();
+
+	    return view('admin/master/edit/kategori',['kategori' => $kategori]);
+        
+    }
+    public function kategori_update(Request $request){
+
+	    DB::table('kategoris')->where('kode_kategori',$request->kode_kategori)->update([
+            'nama_kategori' => $request->nama_kategori,
+        ]);
+	    return redirect('/admin-kategori');
+}
+    public function kategori_delete($id){
+
+	    DB::table('kategoris')->where('kode_kategori',$id)->delete();
+		
+	    return redirect('/admin-kategori')->with('success','Kategori created successfully.');
     }
     public function register() {
         return view('admin/master/registrasi');

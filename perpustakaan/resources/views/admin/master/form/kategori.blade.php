@@ -65,23 +65,24 @@
                                     <h3 class="card-title">Input Kategori</h3>
                                 </div>
                                 <!-- form start -->
-                                <form>
+                                <form action="/admin-kategori-save" method="POST">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Kode Kategori</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                value="{{'KTG'.$kd}}" readonly required>
+                                            <input name="kode_kategori" type="text" class="form-control"
+                                                id="exampleInputEmail1" value="{{'KTG'.$kd}}" readonly required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Kategori</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1"
-                                                placeholder="Masukkan Kategori" required>
+                                            <input name="nama_kategori" type="text" class="form-control"
+                                                id="exampleInputPassword1" placeholder="Masukkan Kategori" required>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary">Back</button>
+                                        <a class="btn btn-primary" href="admin-kategori">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>

@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
 <!-- responsive -->
 <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-<link rel="stylesheet" href="{{asset('css/login.css')}}">
 
 <body>
     <!--PreLoader-->
@@ -107,7 +106,7 @@
                             <p class="subtitle">Sistem Informasi </p>
                             <h1>PERPUSTAKAAN UNILAK</h1>
                             <div class="hero-btns">
-                                <a href="#" class="boxed-btn" data-toggle="modal" data-target="#exampleModal">Login</a>
+                                <a href="/login-perpus" class="boxed-btn">Login</a>
                             </div>
                         </div>
                     </div>
@@ -206,6 +205,5 @@
 <script src="{{asset('js/sticker.js')}}"></script>
 <!-- main js -->
 <script src="{{asset('js/main.js')}}"></script>
-@include('login.login')
 
 </html>

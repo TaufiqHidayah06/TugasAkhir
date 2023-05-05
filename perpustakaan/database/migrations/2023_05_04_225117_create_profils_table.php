@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('karyawans', function (Blueprint $table) {
-            $table->char('NIP',50)->primary();
+        Schema::create('profils', function (Blueprint $table) {
+            $table->char('nim',50)->primary();
             $table->char('email',50);
-            $table->char('profil_kode',50)->unique();
+            $table->char('batas_pinjam',50);
+            $table->char('login_kode',50)->unique();
             $table->timestamps();
         });
-        Schema::table('karyawans', function (Blueprint $table) {
-            $table->foreign('profil_kode')->references('kode_profil')->on('profils')->onDelete('cascade');
+        Schema::table('profils', function (Blueprint $table) {
+            $table->foreign('login_kode')->references('kode_login')->on('logins')->onDelete('cascade');
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('karyawans');
+        Schema::dropIfExists('profils');
     }
 };

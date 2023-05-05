@@ -66,7 +66,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form>
+                                <form action="" method="post">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Kode Buku</label>
@@ -90,15 +90,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Kategori Buku</label>
+                                            @foreach ($select as $s)
                                             <select class="form-control select2bs4" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
-                                                <option>Alaska</option>
-                                                <option>California</option>
-                                                <option>Delaware</option>
-                                                <option>Tennessee</option>
-                                                <option>Texas</option>
-                                                <option>Washington</option>
+                                                <option value="{{ $s->kode_kategori }}">
+                                                    {{ $s->nama_kategori }}
+                                                </option>
                                             </select>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
