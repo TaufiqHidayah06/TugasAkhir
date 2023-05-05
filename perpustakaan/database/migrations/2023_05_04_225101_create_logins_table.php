@@ -17,7 +17,7 @@ return new class extends Migration
             $table->char('kode_login',50)->primary();
             $table->char('email',50);
             $table->char('password',50);
-            
+            $table->char('nip',50)->unique();
             $table->timestamps();
         });
     }
