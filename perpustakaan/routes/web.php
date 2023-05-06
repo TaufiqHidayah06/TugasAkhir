@@ -55,6 +55,7 @@ Route::get('admin-laporan-peminjaman', [AdminController::class, 'laporan_peminja
 Route::get('admin-laporan-pengembalian', [AdminController::class, 'laporan_pengembalian'])->name('laporan_kembali')->middleware('auth');
 Route::get('admin-laporan-peminjaman-pdf', [AdminController::class, 'pdf_peminjaman'])->name('pdfpinjam')->middleware('auth');
 Route::get('admin-laporan-pengembalian-pdf', [AdminController::class, 'pdf_pengembalian'])->name('pdfkembali')->middleware('auth');
+Route::get('admin-laporan-peminjaman-excel', [AdminController::class, 'excel_peminjaman'])->name('excelpinjam')->middleware('auth');
 // Transaksi
 Route::get('admin-peminjaman', [AdminController::class, 'peminjaman'])->name('peminjaman')->middleware('auth');
 Route::get('admin-peminjaman-add/{id}', [AdminController::class, 'form_peminjaman'])->name('aksipinjam')->middleware('auth');

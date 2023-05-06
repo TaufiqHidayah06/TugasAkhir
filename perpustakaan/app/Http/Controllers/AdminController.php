@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Exports\UserExport;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kategori;
 use App\Models\Buku;
@@ -10,6 +12,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PDF;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -81,6 +84,9 @@ class AdminController extends Controller
     }
     
     // Laporan
+    public function excel_peminjaman() {
+        return Excel::download(new UserExport,'laporan_peminjaman.xlsx');
+    }
     public function laporan_peminjaman() {
         $peminjaman = DB::table('tb_peminjaman')->join('tb_user','tb_user.nip' , '=','tb_peminjaman.nip')->join('tb_buku', 'tb_buku.kode_buku', '=', 'tb_peminjaman.buku_kode')->join('tb_nama_peminjam', 'tb_nama_peminjam.nim', '=', 'tb_peminjaman.nim')->where('status','Belum Kembali')->get();
         return view('admin/laporan/peminjaman',['peminjaman' => $peminjaman]);

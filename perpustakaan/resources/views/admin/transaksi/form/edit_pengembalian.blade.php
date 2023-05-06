@@ -84,7 +84,7 @@
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <input type="text" name="peminjaman_id" class="form-control"
+                                            <input type="hidden" name="peminjaman_id" class="form-control"
                                                 id="exampleInputEmail1" value="{{ $p->peminjaman_id }}" readonly
                                                 required>
                                             <label for="exampleInputEmail1">Kode Peminjaman</label>
