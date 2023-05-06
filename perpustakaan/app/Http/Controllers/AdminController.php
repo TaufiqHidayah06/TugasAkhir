@@ -9,6 +9,7 @@ use App\Models\Peminjaman;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class AdminController extends Controller
 {
@@ -87,6 +88,16 @@ class AdminController extends Controller
     public function laporan_pengembalian() {
         $pengembalian = DB::table('tb_peminjaman')->join('tb_user','tb_user.nip' , '=','tb_peminjaman.nip')->join('tb_buku', 'tb_buku.kode_buku', '=', 'tb_peminjaman.buku_kode')->join('tb_nama_peminjam', 'tb_nama_peminjam.nim', '=', 'tb_peminjaman.nim')->where('status','Sudah Kembali')->get();
         return view('admin/laporan/pengembalian',['pengembalian' => $pengembalian]);
+    }
+    public function pdf_peminjaman() {
+        $peminjaman = DB::table('tb_peminjaman')->join('tb_user','tb_user.nip' , '=','tb_peminjaman.nip')->join('tb_buku', 'tb_buku.kode_buku', '=', 'tb_peminjaman.buku_kode')->join('tb_nama_peminjam', 'tb_nama_peminjam.nim', '=', 'tb_peminjaman.nim')->where('status','Belum Kembali')->get();
+        $pdf = PDF::loadview('admin/laporan/pdfpeminjaman', ['peminjaman' => $peminjaman])->setOptions(['defaultFont' => 'sans-serif']);
+        return $pdf->stream('Laporan-Peminjaman.pdf');
+    }
+    public function pdf_pengembalian() {
+        $pengembalian = DB::table('tb_peminjaman')->join('tb_user','tb_user.nip' , '=','tb_peminjaman.nip')->join('tb_buku', 'tb_buku.kode_buku', '=', 'tb_peminjaman.buku_kode')->join('tb_nama_peminjam', 'tb_nama_peminjam.nim', '=', 'tb_peminjaman.nim')->where('status','Sudah Kembali')->get();
+        $pdf = PDF::loadview('admin/laporan/pdfpengembalian', ['pengembalian' => $pengembalian])->setOptions(['defaultFont' => 'sans-serif']);
+        return $pdf->stream('Laporan-Pengembalian.pdf');
     }
 
     // Buku

@@ -87,6 +87,13 @@
                                         </tbody>
                                         @endforeach
                                     </table>
+                                    <div class="card-footer" style="text-align: right;">
+                                        <a class="btn btn-primary" href="{{ route('pdfpinjam') }}" aria-hidden="true">
+                                            <i class="fas fa-folder">
+                                            </i>
+                                            PDF
+                                        </a>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
