@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Laporan</title>
+    <title>Laporan Peminjaman</title>
 
     <link rel="shortcut icon" type="image/png" href="{{asset('img/icon.png')}}">
     <!-- Google Font: Source Sans Pro -->
