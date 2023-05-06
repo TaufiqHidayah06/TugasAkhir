@@ -63,7 +63,7 @@
                                 </div>
                                 <!-- form start -->
                                 @foreach($kategori as $k)
-                                <form action="{{ route('updateketegori') }}" method="POST">
+                                <form action="{{ route('updatekategori') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
