@@ -66,7 +66,7 @@
                                 </div>
                                 <!-- form start -->
                                 @foreach($buku as $b)
-                                <form action="/admin-buku-update" method="POST">
+                                <form action="{{ route('updatebuku') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
@@ -110,7 +110,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <a class="btn btn-primary" href="admin-buku">Back</a>
+                                        <a class="btn btn-primary" href="{{ route('buku') }}">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>

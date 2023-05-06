@@ -91,9 +91,9 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3>{{$peminjaman->count()}}</h3>
 
-                                    <p>Peminjaman</p>
+                                    <p>Transaksi Peminjaman</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>

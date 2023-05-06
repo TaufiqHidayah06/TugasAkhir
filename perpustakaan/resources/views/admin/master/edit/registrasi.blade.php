@@ -67,7 +67,7 @@
                                 <!-- /.card-header -->
                                 <!-- form start -->
                                 @foreach($register as $np)
-                                <form action="/admin-register-update" method="POST">
+                                <form action="{{ route('updateregister') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
@@ -111,7 +111,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <a class="btn btn-primary" href="admin-register">Back</a>
+                                        <a class="btn btn-primary" href="{{ route('register') }}">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>

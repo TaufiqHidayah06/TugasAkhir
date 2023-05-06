@@ -15,7 +15,8 @@ class AdminController extends Controller
     public function dashboard() {
         $buku = DB::table('tb_buku')->join('tb_kategori', 'tb_kategori.kode_kategori', '=', 'tb_buku.kategori_kode')->get();
         $register = DB::table('tb_nama_peminjam')->get();
-        return view('admin/dashboard',['buku' => $buku],['register'=> $register]);
+        $peminjaman = DB::table('tb_peminjaman')->join('tb_user','tb_user.nip' , '=','tb_peminjaman.nip')->join('tb_buku', 'tb_buku.kode_buku', '=', 'tb_peminjaman.buku_kode')->join('tb_nama_peminjam', 'tb_nama_peminjam.nim', '=', 'tb_peminjaman.nim')->where('status','Belum Kembali')->get();
+        return view('admin/dashboard',['buku' => $buku,'register'=> $register,'peminjaman'=> $peminjaman ]);
     }
     
     // Transaksi Peminjaman 
@@ -65,12 +66,12 @@ class AdminController extends Controller
         return view('admin/transaksi/pengembalian',['pengembalian' => $pengembalian]);
     }
     public function edit_pengembalian($id) {
-	    $pengembalian = DB::table('tb_peminjaman')->where('peminjaman_id',$id)->get();
-        return redirect('admin-pengembalian-update',['pengembalian' => $pengembalian]);
+	    $pengembalian = DB::table('tb_peminjaman')->join('tb_user','tb_user.nip' , '=','tb_peminjaman.nip')->join('tb_buku', 'tb_buku.kode_buku', '=', 'tb_peminjaman.buku_kode')->join('tb_nama_peminjam', 'tb_nama_peminjam.nim', '=', 'tb_peminjaman.nim')->where('status','Belum Kembali')->where('peminjaman_id',$id)->get();
+	    return view('admin/transaksi/form/edit_pengembalian',['pengembalian' => $pengembalian]);
     }
-    public function update_pengembalian(Request $pengembalian){
+    public function update_pengembalian(Request $request){
 
-	    DB::table('tb_peminjaman')->where('peminjaman_id',$pengembalian)->update([
+	    DB::table('tb_peminjaman')->where('peminjaman_id',$request->peminjaman_id)->update([
             'status' => 'Sudah Kembali',
         ]);
 	    return redirect('admin-pengembalian');

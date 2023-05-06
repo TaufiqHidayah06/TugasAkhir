@@ -66,7 +66,7 @@
                                 </div>
                                 <!-- form start -->
                                 @foreach($kategori as $k)
-                                <form action="/admin-kategori-update" method="POST">
+                                <form action="{{ route('updateketegori') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
@@ -87,7 +87,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <a class="btn btn-primary" href="admin-kategori">Back</a>
+                                        <a class="btn btn-primary" href="{{ route('kategori') }}">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>

@@ -66,7 +66,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="/admin-buku-save" method="post">
+                                <form action="{{ route('savebuku') }}" method="post">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
@@ -105,7 +105,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <a class="btn btn-primary" href="admin-buku">Back</a>
+                                        <a class="btn btn-primary" href="{{ route('buku') }}">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>

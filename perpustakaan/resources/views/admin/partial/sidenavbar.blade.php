@@ -41,19 +41,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin-kategori" class="nav-link">
+                            <a href="{{ route('kategori') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Kategori</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin-buku" class="nav-link">
+                            <a href="{{ route('buku') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Buku</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin-register" class="nav-link">
+                            <a href="{{ route('register') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Registrasi Mahasiswa</p>
                             </a>
@@ -70,13 +70,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="admin-peminjaman" class="nav-link">
+                            <a href="{{ route('peminjaman') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Peminjaman</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="admin-pengembalian" class="nav-link">
+                            <a href="{{ route('pengembalian') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pengembalian</p>
                             </a>
@@ -93,13 +93,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin-laporan-peminjaman" class="nav-link">
+                            <a href="{{ route('laporan_pinjam') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Laporan Peminjaman</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin-laporan-pengembalian" class="nav-link">
+                            <a href="{{ route('laporan_kembali') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Laporan Pengembalian</p>
                             </a>

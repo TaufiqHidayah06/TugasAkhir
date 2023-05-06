@@ -65,7 +65,7 @@
                                     <h3 class="card-title">Input Kategori</h3>
                                 </div>
                                 <!-- form start -->
-                                <form action="/admin-kategori-save" method="POST">
+                                <form action="{{ route('savekategori') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
@@ -82,7 +82,7 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <a class="btn btn-primary" href="admin-kategori">Back</a>
+                                        <a class="btn btn-primary" href="{{ route('kategori') }}">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>

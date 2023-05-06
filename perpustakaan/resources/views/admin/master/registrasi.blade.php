@@ -107,7 +107,7 @@
                                         @endforeach
                                     </table>
                                     <div class="card-footer" style="text-align: right;">
-                                        <a class="btn btn-primary" href="admin-register-add" aria-hidden="true">
+                                        <a class="btn btn-primary" href="{{ route('addregister') }}" aria-hidden="true">
                                             <i class="fas fa-folder">
                                             </i>
                                             Add

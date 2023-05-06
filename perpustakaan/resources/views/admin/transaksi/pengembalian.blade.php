@@ -91,7 +91,7 @@
                                                 <td>{{ $item->nama }}</td>
                                                 <td class="project-actions text-center">
                                                     <a class="btn btn-info btn-sm"
-                                                        href="admin-pengembalian-edit/{{ $item->peminjaman_id }}"
+                                                        href="admin-kembali-edit/{{ $item->peminjaman_id }}"
                                                         aria-hidden="true">
                                                         <i class="fas fa-hand-point-right">
                                                         </i>
