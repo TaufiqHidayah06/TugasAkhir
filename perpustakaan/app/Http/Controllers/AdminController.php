@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kategori;
 use App\Models\Buku;
 use App\Models\NamaPeminjam;
@@ -57,8 +57,8 @@ class AdminController extends Controller
             'status'=> 'required',
         ]);
         Peminjaman::create($request->all());
-       
-        return redirect('admin-peminjaman')->with('success','Buku created successfully.');        
+        Alert::success('Congrats', 'Peminjaman created successfully.');
+        return redirect('admin-peminjaman');        
     }
 
     // Transaksi Pengembalian
@@ -75,6 +75,7 @@ class AdminController extends Controller
 	    DB::table('tb_peminjaman')->where('peminjaman_id',$request->peminjaman_id)->update([
             'status' => 'Sudah Kembali',
         ]);
+        Alert::success('Congrats', 'Pengembalian update successfully.');
 	    return redirect('admin-pengembalian');
     }
     
@@ -117,8 +118,8 @@ class AdminController extends Controller
             'kategori_kode' => 'required'
         ]);
         buku::create($request->all());
-       
-        return redirect('/admin-buku')->with('success','Buku created successfully.');
+        Alert::success('Congrats', 'Buku created successfully.');
+        return redirect('/admin-buku');
     }
     public function buku_edit($id){
         $select = Kategori::all();
@@ -133,13 +134,15 @@ class AdminController extends Controller
             'penerbit' => $request->penerbit,
             'kategori_kode' => $request->kategori_kode
         ]);
+        Alert::success('Congrats', 'Buku created successfully.');
 	    return redirect('/admin-buku');
     }
     public function buku_delete($id){
 
 	    DB::table('tb_buku')->where('buku_id',$id)->delete();
+        Alert::success('Congrats', 'Buku deleted successfully.');
 		
-	    return redirect('/admin-buku')->with('success','Buku Deleted successfully.');
+	    return redirect('/admin-buku');
     }
 
     // Kategori
@@ -169,8 +172,9 @@ class AdminController extends Controller
         ]);
 
         kategori::create($request->all());
+        Alert::success('Congrats', 'Kategori created successfully.');
        
-        return redirect('/admin-kategori')->with('success','Kategori created successfully.');
+        return redirect('/admin-kategori');
     }
     public function kategori_edit($id){
 
@@ -184,13 +188,14 @@ class AdminController extends Controller
 	    DB::table('tb_kategori')->where('kategori_id',$request->kategori_id)->update([
             'nama_kategori' => $request->nama_kategori,
         ]);
+        Alert::success('Congrats', 'Kategori Update successfully.');
 	    return redirect('/admin-kategori');
     }
     public function kategori_delete($id){
 
 	    DB::table('tb_kategori')->where('kategori_id',$id)->delete();
-		
-	    return redirect('/admin-kategori')->with('success','Kategori Deleted successfully.');
+		Alert::success('Congrats', 'Kategori delete successfully.');
+	    return redirect('/admin-kategori');
     }
     
     // Register
@@ -223,8 +228,9 @@ class AdminController extends Controller
         ]);
 
         NamaPeminjam::create($request->all());
+        Alert::success('Congrats', 'Register created successfully');
        
-        return redirect('admin-register')->with('success','Register created successfully.');
+        return redirect('admin-register');
     }
     public function register_edit($id){
 
@@ -241,12 +247,14 @@ class AdminController extends Controller
             'alamat' => $request->alamat,
             'fakultas' => $request->fakultas
         ]);
+        Alert::success('Congrats', 'Register Update successfully');
 	    return redirect('/admin-register');
     }
     public function register_delete($id){
 
 	    DB::table('tb_nama_peminjam')->where('id_np',$id)->delete();
+        Alert::success('Congrats', 'Register Delete successfully');
 		
-	    return redirect('admin-register')->with('success','Register Deleted successfully.');
+	    return redirect('admin-register');
     }
 }
