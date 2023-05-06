@@ -107,7 +107,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3>{{$pengembalian->count()}}</h3>
 
                                     <p>Pengembalian</p>
                                 </div>
