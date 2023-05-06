@@ -70,6 +70,8 @@
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
+                                            <input name="kategori_id" type="hidden" value="{{ $k->kategori_id }}"
+                                                readonly required>
                                             <label for="exampleInputEmail1">Kode Kategori</label>
                                             <input name="kode_kategori" type="text" class="form-control"
                                                 id="exampleInputEmail1" value="{{ $k->kode_kategori }}" readonly

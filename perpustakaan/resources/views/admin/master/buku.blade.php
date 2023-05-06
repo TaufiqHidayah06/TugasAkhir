@@ -89,12 +89,15 @@
                                                 <td>{{ $item->penerbit }}</td>
                                                 <td>{{ $item->nama_kategori }}</td>
                                                 <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/admin-buku-edit/{{ $item->buku_id }}" aria-hidden="true">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="" aria-hidden="true">
+                                                    <a class="btn btn-danger btn-sm"
+                                                        href="/admin-buku-delete/{{ $item->buku_id }}"
+                                                        aria-hidden="true">
                                                         <i class="fas fa-trash">
                                                         </i>
                                                         Delete

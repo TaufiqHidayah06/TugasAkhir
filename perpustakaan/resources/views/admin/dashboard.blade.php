@@ -75,7 +75,7 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3>{{$buku->count()}}</h3>
 
                                     <p>Buku</p>
                                 </div>
@@ -123,9 +123,9 @@
                             <!-- small box -->
                             <div class="small-box bg-blue">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3>{{$register->count()}}</h3>
 
-                                    <p>User</p>
+                                    <p>Mahasiswa</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>

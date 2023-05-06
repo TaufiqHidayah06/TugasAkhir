@@ -55,7 +55,7 @@
                         <li class="nav-item">
                             <a href="/admin-register" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Registrasi User</p>
+                                <p>Registrasi Mahasiswa</p>
                             </a>
                         </li>
                     </ul>

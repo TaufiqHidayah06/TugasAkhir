@@ -69,57 +69,28 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr style="background-color: steelblue; color: white; text-align: center;">
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
+                                                <th>No</th>
+                                                <th>Kode Buku</th>
+                                                <th>Nama Buku</th>
+                                                <th>Penulis</th>
+                                                <th>Penerbit</th>
+                                                <th>Kategori</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+                                        @foreach($peminjaman as $p => $item)
                                         <tbody>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
+                                                <td>{{ $p+1 }}</td>
+                                                <td>{{ $item->kode_buku }}</td>
+                                                <td>{{ $item->nama_buku }}</td>
+                                                <td>{{ $item->penulis }}</td>
+                                                <td>{{ $item->penerbit }}</td>
+                                                <td>{{ $item->nama_kategori }}</td>
                                                 <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
-                                                        <i class="fas fa-hand-point-right">
-                                                        </i>
-                                                        Pinjam
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 5.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                                <td>C</td>
-                                                <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
-                                                        <i class="fas fa-hand-point-right">
-                                                        </i>
-                                                        Pinjam
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 5.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                                <td>C</td>
-                                                <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="admin-peminjaman-add/{{ $item->buku_id }}"
+                                                        aria-hidden="true">
                                                         <i class="fas fa-hand-point-right">
                                                         </i>
                                                         Pinjam
@@ -127,15 +98,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
-                                        </tfoot>
+                                        @endforeach
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -158,6 +121,5 @@
     <!-- ./wrapper -->
 </body>
 @include('admin.partial.js_master')
-@include('admin.master.form.buku')
 
 </html>

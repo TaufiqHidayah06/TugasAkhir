@@ -66,37 +66,40 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="" method="post">
+                                <form action="/admin-buku-save" method="post">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Kode Buku</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                value="{{'BK'.$kd}}" readonly required>
+                                            <input type="text" name="kode_buku" class="form-control"
+                                                id="exampleInputEmail1" value="{{'BK'.$kd}}" readonly required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Judul Buku</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1"
-                                                placeholder="Masukkan Judul Buku">
+                                            <input name="nama_buku" type="text" class="form-control"
+                                                id="exampleInputPassword1" placeholder="Masukkan Judul Buku">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Penulis</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Masukkan Nama Penulis" required>
+                                            <input name="penulis" type="text" class="form-control"
+                                                id="exampleInputEmail1" placeholder="Masukkan Nama Penulis" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Penerbit</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                placeholder="Masukkan Nama Penerbit" required>
+                                            <input name="penerbit" type="text" class="form-control"
+                                                id="exampleInputEmail1" placeholder="Masukkan Nama Penerbit" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Kategori Buku</label>
-                                            @foreach ($select as $s)
-                                            <select class="form-control select2bs4" style="width: 100%;">
+                                            <select class="form-control select2bs4" name="kategori_kode"
+                                                style="width: 100%;">
+                                                @foreach ($select as $s)
                                                 <option value="{{ $s->kode_kategori }}">
-                                                    {{ $s->nama_kategori }}
+                                                    {{ $s->kode_kategori }} - {{ $s->nama_kategori }}
                                                 </option>
+                                                @endforeach
                                             </select>
-                                            @endforeach
+
                                         </div>
                                     </div>
                                     <!-- /.card-body -->

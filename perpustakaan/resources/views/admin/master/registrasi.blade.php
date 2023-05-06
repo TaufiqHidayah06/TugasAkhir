@@ -42,7 +42,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Data Pengguna</h1>
+                            <h1 class="m-0">Data Mahasiswa</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -60,52 +60,54 @@
                             <!-- /.content-header -->
                             <div class="card">
                                 <div class="card-header" style="background-color: steelblue; color: white;">
-                                    <h3 class="card-title">Data Pengguna</h3>
+                                    <h3 class="card-title">Data Mahasiswa</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                            <tr style="background-color: steelblue; color: white;">
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
+                                            <tr style="background-color: steelblue; color: white; text-align: center;">
+                                                <th>No</th>
+                                                <th>NIM</th>
+                                                <th>Nama</th>
+                                                <th>No Hp</th>
+                                                <th>Alamat</th>
+                                                <th>Fakultas</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
+                                        @foreach($register as $np => $item)
                                         <tbody>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 4.0
+                                                <td>{{ $np+1 }}</td>
+                                                <td>{{ $item->nim }}</td>
+                                                <td>{{ $item->nama_peminjam }}</td>
+                                                <td>{{ $item->no_hp }}</td>
+                                                <td>{{ $item->alamat }}</td>
+                                                <td>{{ $item->fakultas }}</td>
+                                                <td class="project-actions text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/admin-register-edit/{{ $item->id_np }}"
+                                                        aria-hidden="true">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm"
+                                                        href="/admin-register-delete/{{ $item->id_np }}"
+                                                        aria-hidden="true">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Delete
+                                                    </a>
+
                                                 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 5.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                                <td>C</td>
                                             </tr>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
-                                        </tfoot>
+                                        @endforeach
                                     </table>
                                     <div class="card-footer" style="text-align: right;">
-                                        <a class="btn btn-primary" href="#" aria-hidden="true">
+                                        <a class="btn btn-primary" href="admin-register-add" aria-hidden="true">
                                             <i class="fas fa-folder">
                                             </i>
                                             Add

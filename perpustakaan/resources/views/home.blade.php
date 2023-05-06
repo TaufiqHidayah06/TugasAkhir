@@ -106,7 +106,7 @@
                             <p class="subtitle">Sistem Informasi </p>
                             <h1>PERPUSTAKAAN UNILAK</h1>
                             <div class="hero-btns">
-                                <a href="/login-perpus" class="boxed-btn">Login</a>
+                                <a href="{{ route('login') }}" class="boxed-btn">Login</a>
                             </div>
                         </div>
                     </div>

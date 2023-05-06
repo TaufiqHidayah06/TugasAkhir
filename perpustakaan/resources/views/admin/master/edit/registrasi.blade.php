@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrasi Mahasiswa</title>
+    <title>Edit Mahasiswa</title>
 
     <link rel="shortcut icon" type="image/png" href="{{asset('img/icon.png')}}">
     <!-- Google Font: Source Sans Pro -->
@@ -44,7 +44,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Register Mahasiswa</h1>
+                            <h1 class="m-0">Edit Data Mahasiswa</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -62,34 +62,38 @@
                         <div class="col-md-4">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Registrasi</h3>
+                                    <h3 class="card-title">Edit Data Mahasiswa</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="/admin-register-save" method="POST">
+                                @foreach($register as $np)
+                                <form action="/admin-register-update" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nim</label>
+                                            <input name="id_np" type="hidden" class="form-control"
+                                                id="exampleInputEmail1" value="{{ $np->id_np }}" readonly required>
                                             <input name="nim" type="text" class="form-control" id="exampleInputEmail1"
-                                                value="{{'2055'.$kd}}" readonly required>
+                                                value="{{ $np->nim }}" readonly required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nama</label>
                                             <input name="nama_peminjam" type="text" class="form-control"
                                                 id="exampleInputPassword1" placeholder="Masukkan Nama Mahasiswa"
-                                                required>
+                                                value="{{ $np->nama_peminjam }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">alamat</label>
                                             <input name="alamat" type="text" class="form-control"
-                                                id="exampleInputPassword1" placeholder="Masukkan Alamat" required>
+                                                id="exampleInputPassword1" value="{{ $np->alamat }}"
+                                                placeholder="Masukkan Alamat" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">No Hp</label>
                                             <input name="no_hp" type="text" class="form-control"
-                                                id="exampleInputPassword1" placeholder="Masukkan Nomor HandPhone"
-                                                required>
+                                                id="exampleInputPassword1" value="{{ $np->no_hp }}"
+                                                placeholder="Masukkan Nomor HandPhone" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Fakultas</label>
@@ -111,6 +115,7 @@
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>
+                                @endforeach
                             </div>
                         </div>
                     </div>

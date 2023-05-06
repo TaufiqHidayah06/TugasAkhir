@@ -82,14 +82,14 @@
                                                 <td>{{ $item->nama_kategori }}</td>
                                                 <td class="project-actions text-center">
                                                     <a class="btn btn-info btn-sm"
-                                                        href="/admin-kategori-edit/{{ $item->kode_kategori }}"
+                                                        href="/admin-kategori-edit/{{ $item->kategori_id }}"
                                                         aria-hidden="true">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
                                                     <a class="btn btn-danger btn-sm"
-                                                        href="/admin-kategori-delete/{{ $item->kode_kategori }}"
+                                                        href="/admin-kategori-delete/{{ $item->kategori_id }}"
                                                         aria-hidden="true">
                                                         <i class="fas fa-trash">
                                                         </i>

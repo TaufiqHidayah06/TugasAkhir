@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kategoris', function (Blueprint $table) {
-            $table->char('kode_kategori',50)->primary();
-            $table->char('nama_kategori',50);
+        Schema::create('tb_nama_peminjam', function (Blueprint $table) {
+            $table->id('id_np');
+            $table->char('nim',50)->unique();
+            $table->char('nama_peminjam',50);
+            $table->char('no_hp',50);
+            $table->char('alamat',50);
+            $table->char('fakultas',50);
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kategoris');
+        Schema::dropIfExists('tb_nama_peminjam');
     }
 };

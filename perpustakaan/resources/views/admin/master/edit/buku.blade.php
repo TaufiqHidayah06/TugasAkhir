@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrasi Mahasiswa</title>
+    <title>Edit Buku</title>
 
     <link rel="shortcut icon" type="image/png" href="{{asset('img/icon.png')}}">
     <!-- Google Font: Source Sans Pro -->
@@ -44,7 +44,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Register Mahasiswa</h1>
+                            <h1 class="m-0">Data Buku</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -62,44 +62,47 @@
                         <div class="col-md-4">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Registrasi</h3>
+                                    <h3 class="card-title">Edit Buku</h3>
                                 </div>
-                                <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="/admin-register-save" method="POST">
+                                @foreach($buku as $b)
+                                <form action="/admin-buku-update" method="POST">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nim</label>
-                                            <input name="nim" type="text" class="form-control" id="exampleInputEmail1"
-                                                value="{{'2055'.$kd}}" readonly required>
+                                            <input name="buku_id" type="hidden" class="form-control"
+                                                id="exampleInputEmail1" value="{{ $b->buku_id }}" readonly required>
+                                            <label for="exampleInputEmail1">Kode Buku</label>
+                                            <input name="kode_buku" type="text" class="form-control"
+                                                id="exampleInputEmail1" value="{{ $b->kode_buku }}" readonly required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Nama</label>
-                                            <input name="nama_peminjam" type="text" class="form-control"
-                                                id="exampleInputPassword1" placeholder="Masukkan Nama Mahasiswa"
-                                                required>
+                                            <label for="exampleInputPassword1">Judul Buku</label>
+                                            <input name="nama_buku" type="text" class="form-control"
+                                                id="exampleInputPassword1" placeholder="Masukkan Judul"
+                                                value="{{ $b->nama_buku }}" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">alamat</label>
-                                            <input name="alamat" type="text" class="form-control"
-                                                id="exampleInputPassword1" placeholder="Masukkan Alamat" required>
+                                            <label for="exampleInputPassword1">Penerbit Buku</label>
+                                            <input name="penerbit" type="text" class="form-control"
+                                                id="exampleInputPassword1" placeholder="Masukkan Penerbit Buku"
+                                                value="{{ $b->penerbit }}" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">No Hp</label>
-                                            <input name="no_hp" type="text" class="form-control"
-                                                id="exampleInputPassword1" placeholder="Masukkan Nomor HandPhone"
-                                                required>
+                                            <label for="exampleInputPassword1">Penulis Buku</label>
+                                            <input name="penulis" type="text" class="form-control"
+                                                id="exampleInputPassword1" placeholder="Masukkan Penulis Buku"
+                                                value="{{ $b->penulis }}" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>Fakultas</label>
-                                            <select class="form-control select2bs4" name="fakultas"
+                                            <label>Kategori Buku</label>
+                                            <select class="form-control select2bs4" name="kategori_kode"
                                                 style="width: 100%;">
-                                                <option value="Fasilkom">Fasilkom</option>
-                                                <option value="Fekon">Fekon</option>
-                                                <option value="Fakum">Fakum</option>
-                                                <option value="Fanik">Fanik</option>
-                                                <option value="Fadaya">Fadaya</option>
+                                                @foreach ($select as $s)
+                                                <option value="{{ $s->kode_kategori }}">
+                                                    {{ $s->kode_kategori }} - {{ $s->nama_kategori }}
+                                                </option>
+                                                @endforeach
                                             </select>
 
                                         </div>
@@ -107,15 +110,17 @@
                                     <!-- /.card-body -->
 
                                     <div class="card-footer">
-                                        <a class="btn btn-primary" href="admin-register">Back</a>
+                                        <a class="btn btn-primary" href="admin-buku">Back</a>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
         <!-- /.content-wrapper -->
         @include('admin.partial.footer')

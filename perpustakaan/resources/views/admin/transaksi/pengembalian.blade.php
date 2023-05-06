@@ -62,64 +62,37 @@
                             <!-- /.content-header -->
                             <div class="card">
                                 <div class="card-header" style="background-color: steelblue; color: white;">
-                                    <h3 class="card-title">pengembalian</h3>
+                                    <h3 class="card-title">Pengembalian</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr style="background-color: steelblue; color: white; text-align: center;">
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
+                                                <th>No</th>
+                                                <th>Kode Peminjaman</th>
+                                                <th>Nama Buku</th>
+                                                <th>Nama Mahasiswa</th>
+                                                <th>Tanggal Pinjam</th>
+                                                <th>Tanggal Kembali</th>
+                                                <th>Petugas</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
+                                        @foreach($pengembalian as $p => $item)
                                         <tbody>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
+                                                <td>{{ $p+1 }}</td>
+                                                <td>{{ $item->kode_peminjaman }}</td>
+                                                <td>{{ $item->nama_buku }}</td>
+                                                <td>{{ $item->nama_peminjam }}</td>
+                                                <td>{{ $item->tgl_pinjam }}</td>
+                                                <td>{{ $item->tgl_kembali }}</td>
+                                                <td>{{ $item->nama }}</td>
                                                 <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
-                                                        <i class="fas fa-hand-point-right">
-                                                        </i>
-                                                        Kembali
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 5.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                                <td>C</td>
-                                                <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
-                                                        <i class="fas fa-hand-point-right">
-                                                        </i>
-                                                        Kembali
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 5.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                                <td>C</td>
-                                                <td class="project-actions text-center">
-                                                    <a class="btn btn-info btn-sm" href="" aria-hidden="true">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="admin-pengembalian-edit/{{ $item->peminjaman_id }}"
+                                                        aria-hidden="true">
                                                         <i class="fas fa-hand-point-right">
                                                         </i>
                                                         Kembali
@@ -127,15 +100,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
-                                        </tfoot>
+                                        @endforeach
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -158,6 +123,5 @@
     <!-- ./wrapper -->
 </body>
 @include('admin.partial.js_master')
-@include('admin.master.form.buku')
 
 </html>

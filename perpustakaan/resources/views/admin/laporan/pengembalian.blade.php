@@ -67,43 +67,29 @@
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
+                                            <tr style="background-color: steelblue; color: white; text-align: center;">
+                                                <th>No</th>
+                                                <th>Kode Peminjaman</th>
+                                                <th>Nama Buku</th>
+                                                <th>Nama Mahasiswa</th>
+                                                <th>Tanggal Pinjam</th>
+                                                <th>Tanggal Kembali</th>
+                                                <th>Petugas</th>
                                             </tr>
                                         </thead>
+                                        @foreach($pengembalian as $p => $item)
                                         <tbody>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet
-                                                    Explorer 5.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td>5</td>
-                                                <td>C</td>
+                                                <td>{{ $p+1 }}</td>
+                                                <td>{{ $item->kode_peminjaman }}</td>
+                                                <td>{{ $item->nama_buku }}</td>
+                                                <td>{{ $item->nama_peminjam }}</td>
+                                                <td>{{ $item->tgl_pinjam }}</td>
+                                                <td>{{ $item->tgl_kembali }}</td>
+                                                <td>{{ $item->nama }}</td>
                                             </tr>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
-                                        </tfoot>
+                                        @endforeach
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
