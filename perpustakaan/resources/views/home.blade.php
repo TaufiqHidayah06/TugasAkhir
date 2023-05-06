@@ -57,8 +57,6 @@
                             <ul>
                                 <li class="current-list-item"><a href="#">Home</a>
                                 </li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
                                 <li>
                                     <div class="header-icons">
                                         <a class="mobile-hide search-bar-icon" href="#"><i
@@ -103,8 +101,8 @@
                 <div class="col-lg-9 offset-lg-2 text-center">
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
-                            <p class="subtitle">Sistem Informasi </p>
-                            <h1>PERPUSTAKAAN UNILAK</h1>
+                            <p class="subtitle">Sistem Informasi Perpustakaan Unilak </p>
+                            <h1>SELAMAT DATANG DI PERPUSTAKAAN UNILAK</h1>
                             <div class="hero-btns">
                                 <a href="{{ route('login') }}" class="boxed-btn">Login</a>
                             </div>
@@ -120,13 +118,13 @@
     <div class="footer-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-box about-widget">
                         <h2 class="widget-title">About us</h2>
                         <p>Website itu bertujuan untuk menyelesaikan tugas akhir bootcamp garuda cyber indonesia.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-box get-in-touch">
                         <h2 class="widget-title">Alamat</h2>
                         <ul>
@@ -136,24 +134,13 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-box pages">
                         <h2 class="widget-title">Pages</h2>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-box subscribe">
-                        <h2 class="widget-title">Comment</h2>
-                        <p>Silahkan Komen Di email ini.</p>
-                        <form action="#">
-                            <input type="email" placeholder="Email">
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
                     </div>
                 </div>
             </div>
