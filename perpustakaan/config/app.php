@@ -182,6 +182,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         //Barryvdh\DomPDF\ServiceProvider::class,
+        //Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -196,6 +197,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         //'PDF' => Barryvdh\DomPDF\ServiceProvider::class,
+        //'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

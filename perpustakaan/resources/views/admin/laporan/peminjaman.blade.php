@@ -93,11 +93,7 @@
                                             </i>
                                             PDF
                                         </a>
-                                        <a class="btn btn-primary" href="{{ route('excelpinjam') }}" aria-hidden="true">
-                                            <i class="fas fa-folder">
-                                            </i>
-                                            Excel
-                                        </a>
+
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
